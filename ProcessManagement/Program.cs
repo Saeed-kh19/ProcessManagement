@@ -14,6 +14,7 @@ namespace ProcessManagement
             //set variables
             int selection;
             string processToRun;
+            string waitForKey;
 
         //Menu Design
         line0: Console.Clear();
@@ -22,7 +23,7 @@ namespace ProcessManagement
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" Welcome to process management application!");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("--------------------------------------------\n");
             Console.WriteLine("Please select an action: \n");
             Console.WriteLine("1. Run a process");
             Console.WriteLine("2. List processes");
@@ -73,8 +74,16 @@ namespace ProcessManagement
                     }
                 case 2:
                     Console.Clear();
-
-                    break;
+                    listProcess();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("\nPress (b) to back to main menu...");
+                    Console.ResetColor();
+                    waitForKey = Console.ReadLine();
+                    while (waitForKey !="b")
+                    {
+                        waitForKey = Console.ReadLine();
+                    }
+                    goto line0;
                 case 3:
                     Console.Clear();
 
@@ -96,7 +105,15 @@ namespace ProcessManagement
         }
         static void listProcess()
         {
-
+            Process[] processList = Process.GetProcesses();
+            foreach (Process process in processList)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write(process.Id);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write($" {process.ProcessName}\n");
+                Console.ResetColor();
+            }
         }
         static void killProcess()
         {
