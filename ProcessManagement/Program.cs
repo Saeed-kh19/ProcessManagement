@@ -11,10 +11,14 @@ namespace ProcessManagement
     {
         static void Main(string[] args)
         {
-            //set variables
+            //Create variables
             int selection;
             string processToRun;
+            int processToKill;
             string waitForKey;
+
+            //Initializing process list
+            Process[] processList = Process.GetProcesses();
 
         //Menu Design
         line0: Console.Clear();
@@ -29,6 +33,8 @@ namespace ProcessManagement
             Console.WriteLine("2. List processes");
             Console.WriteLine("3. Kill a process");
             Console.WriteLine("4. Hirearchy of a specific process\n");
+
+        //Choices
         line1: try
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -50,7 +56,7 @@ namespace ProcessManagement
                     Console.ForegroundColor = ConsoleColor.Gray;
                     Console.Write(" (or press (b) to back to main menu)");
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(":\n");
+                    Console.Write(":\n\n");
                     while (true)
                     {
 
@@ -72,6 +78,7 @@ namespace ProcessManagement
                             goto line2;
                         }
                     }
+
                 case 2:
                     Console.Clear();
                     listProcess();
@@ -79,19 +86,51 @@ namespace ProcessManagement
                     Console.WriteLine("\nPress (b) to back to main menu...");
                     Console.ResetColor();
                     waitForKey = Console.ReadLine();
-                    while (waitForKey !="b")
+                    while (waitForKey != "b")
                     {
                         waitForKey = Console.ReadLine();
                     }
                     goto line0;
+
                 case 3:
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("Type your proccess's ID to kill");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write(" (or press (-1) to back to main menu)");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(":\n\n");
+                    while (true)
+                    {
 
-                    break;
+                    line3: Console.ForegroundColor = ConsoleColor.Yellow;
+                        
+                        try
+                        {
+                            processToKill = int.Parse(Console.ReadLine());
+                            if (processToKill == -1)
+                            {
+                                goto line0;
+                            }
+                            killProcess(processToKill);
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.WriteLine("Process killed successfully!");
+
+                        }
+                        catch (Exception)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Illegal ID!");
+                            Console.ResetColor();
+                            goto line3;
+                        }
+                    }
+
                 case 4:
                     Console.Clear();
 
                     break;
+
                 default:
                     Console.WriteLine("Incorrect number! try again");
                     goto line1;
@@ -115,9 +154,16 @@ namespace ProcessManagement
                 Console.ResetColor();
             }
         }
-        static void killProcess()
+        static void killProcess(int processId)
         {
-
+            Process[] processList = Process.GetProcesses();
+            foreach (Process process in processList)
+            {
+                if (process.Id == processId)
+                {
+                    process.Kill();
+                }
+            }
         }
         static void processTree()
         {
