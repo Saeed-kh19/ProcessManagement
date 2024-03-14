@@ -4,21 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace ProcessManagement
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        // Import the OpenProcess function from the Windows API
+        [DllImport("kernel32.dll")]
+        static extern int GetProcessId(IntPtr handle);
+        public static void Main(string[] args)
         {
             //Create variables
             int selection;
             string processToRun;
             int processToKill;
+            int processToTree;
             string waitForKey;
 
-            //Initializing process list
-            Process[] processList = Process.GetProcesses();
 
         //Menu Design
         line0: Console.Clear();
@@ -104,7 +109,7 @@ namespace ProcessManagement
                     {
 
                     line3: Console.ForegroundColor = ConsoleColor.Yellow;
-                        
+
                         try
                         {
                             processToKill = int.Parse(Console.ReadLine());
@@ -128,15 +133,39 @@ namespace ProcessManagement
 
                 case 4:
                     Console.Clear();
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("Type your proccess's ID");
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write(" (or press (-1) to back to main menu)");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write(":\n\n");
+                    while (true)
+                    {
 
-                    break;
+                    line4: Console.ForegroundColor = ConsoleColor.Yellow;
 
+                        try
+                        {
+                            processToTree = int.Parse(Console.ReadLine());
+                            Console.ResetColor();
+                            if (processToTree == -1)
+                                goto line0;
+                            processTree(processToTree);
+                        }
+                        catch (Exception)
+                        {
+
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Illegal ID!");
+                            Console.ResetColor();
+                            goto line4;
+                        }
+                    }
                 default:
                     Console.WriteLine("Incorrect number! try again");
                     goto line1;
             }
-            Console.ReadKey();
-
         }
         static void runProcess(string process)
         {
@@ -147,10 +176,10 @@ namespace ProcessManagement
             Process[] processList = Process.GetProcesses();
             foreach (Process process in processList)
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.Write(process.Id);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write($" {process.ProcessName}\n");
+                Console.Write($"\t{process.ProcessName}\n");
                 Console.ResetColor();
             }
         }
@@ -165,9 +194,24 @@ namespace ProcessManagement
                 }
             }
         }
-        static void processTree()
+        public static void processTree(int pid)
         {
-
+            IntPtr processHandle;
+            Process[] processList = Process.GetProcesses();
+            for (int i = 0; i < processList.Length; i++)
+            {
+                if (processList[i].Id == pid)
+                {
+                    processHandle = Process.GetProcessById(pid).Handle;
+                    foreach (var proc in processList)
+                    {
+                        if (proc.Handle == processHandle)
+                        {
+                            Console.WriteLine(proc.ProcessName);
+                        }
+                    }
+                }
+            }
         }
     }
 }
