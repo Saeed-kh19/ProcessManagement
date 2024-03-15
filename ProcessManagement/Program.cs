@@ -4,24 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 
 namespace ProcessManagement
 {
     internal class Program
     {
-
-        // Import the OpenProcess function from the Windows API
-        [DllImport("kernel32.dll")]
-        static extern int GetProcessId(IntPtr handle);
         public static void Main(string[] args)
         {
             //Create variables
             int selection;
             string processToRun;
             int processToKill;
-            int processToTree;
+            int parentProcess;
             string waitForKey;
 
 
@@ -147,11 +141,11 @@ namespace ProcessManagement
 
                         try
                         {
-                            processToTree = int.Parse(Console.ReadLine());
+                            parentProcess = int.Parse(Console.ReadLine());
                             Console.ResetColor();
-                            if (processToTree == -1)
+                            if (parentProcess == -1)
                                 goto line0;
-                            processTree(processToTree);
+                            Program.parentProcess(parentProcess);
                         }
                         catch (Exception)
                         {
@@ -167,10 +161,14 @@ namespace ProcessManagement
                     goto line1;
             }
         }
+
+        //Run a specific process
         static void runProcess(string process)
         {
             Process.Start(process);
         }
+
+        //List of all processes
         static void listProcess()
         {
             Process[] processList = Process.GetProcesses();
@@ -183,6 +181,8 @@ namespace ProcessManagement
                 Console.ResetColor();
             }
         }
+
+        //Kill a specific process
         static void killProcess(int processId)
         {
             Process[] processList = Process.GetProcesses();
@@ -194,7 +194,9 @@ namespace ProcessManagement
                 }
             }
         }
-        public static void processTree(int pid)
+
+        //Get parent process
+        public static void parentProcess(int pid)
         {
             IntPtr processHandle;
             Process[] processList = Process.GetProcesses();
@@ -203,13 +205,7 @@ namespace ProcessManagement
                 if (processList[i].Id == pid)
                 {
                     processHandle = Process.GetProcessById(pid).Handle;
-                    foreach (var proc in processList)
-                    {
-                        if (proc.Handle == processHandle)
-                        {
-                            Console.WriteLine(proc.ProcessName);
-                        }
-                    }
+                    Console.WriteLine(processHandle);
                 }
             }
         }
