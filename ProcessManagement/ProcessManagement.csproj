@@ -60,15 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autorun\Autorun.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ProcessListing\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ProcessList\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
