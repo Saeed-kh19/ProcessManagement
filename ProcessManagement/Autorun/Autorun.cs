@@ -16,6 +16,22 @@ class Program
         Console.ReadLine();
         watcher.Stop();
     }
+    static void Insert(object sender, EventArrivedEventArgs e)
+    {
+        string driveLetter = e.NewEvent.Properties["DriveName"].Value.ToString();
+        DriveInfo driveInfo = new DriveInfo(driveLetter);
 
+        if (driveInfo.DriveType == DriveType.Removable)
+        {
+            try
+            {
+                Process.Start("mspaint.exe");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"An error occured!");
+            }
+        }
+    }
 }
 
