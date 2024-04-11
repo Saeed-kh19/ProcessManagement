@@ -7,6 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        //Welcomization!
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Please insert your flash drive (or press Enter for exitting the program): ");
         Console.ResetColor();
@@ -27,7 +28,7 @@ class Program
         string driveLetter = e.NewEvent.Properties["DriveName"].Value.ToString();
         DriveInfo driveInfo = new DriveInfo(driveLetter);
         
-        //Running 'mspaint.exe' process!
+        //Running 'mspaint.exe' process...!
         if (driveInfo.DriveType == DriveType.Removable)
         {
             try
