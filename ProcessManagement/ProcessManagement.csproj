@@ -60,7 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autorun\Autorun.cs" />
-    <Compile Include="ProcessListing\Program.cs" />
+    <Compile Include="ProcessListing\Program - Copy.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
