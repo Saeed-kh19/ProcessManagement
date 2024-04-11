@@ -7,21 +7,27 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Please insert your flash drive:");
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine("Please insert your flash drive (or press Enter for exitting the program): ");
+        Console.ResetColor();
 
+        //Listening for flash disk insertion
         ManagementEventWatcher watcher = new ManagementEventWatcher();
         WqlEventQuery query = new WqlEventQuery("SELECT * FROM Win32_VolumeChangeEvent WHERE EventType = 2");
         watcher.EventArrived += Insert;
         watcher.Query = query;
         watcher.Start();
+        //If user wants to exit
         Console.ReadLine();
         watcher.Stop();
     }
     static void Insert(object sender, EventArrivedEventArgs e)
     {
+        //Detecting flash drive and fetching its specifications
         string driveLetter = e.NewEvent.Properties["DriveName"].Value.ToString();
         DriveInfo driveInfo = new DriveInfo(driveLetter);
-
+        
+        //Running 'mspaint.exe' process!
         if (driveInfo.DriveType == DriveType.Removable)
         {
             try
