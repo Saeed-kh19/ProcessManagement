@@ -1,14 +1,18 @@
-﻿using ProcessManagement.JSON;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
+using System.Text.Json;
 using System.Diagnostics;
 using System.IO;
 using System.Management;
+using ProcessManagement.JSON;
+using Newtonsoft.Json;
 
 class Program
 {
     static void Main(string[] args)
     {
+    line1: Console.Clear();
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Welcome to JSON management system!\n");
         Console.ResetColor();
@@ -17,6 +21,7 @@ class Program
             "1.Create a JSON file\n" +
             "2.Import a JSON file\n");
     line0: int choice = int.Parse(Console.ReadLine());
+
         switch (choice)
         {
             case 1:
@@ -28,12 +33,29 @@ class Program
                 CreateJSON();
 
                 break;
+
             case 2:
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Import JSON file\n");
                 Console.ResetColor();
+
+                string path = "C:\\Users\\Saeed.kh\\source\\repos\\ProcessManagement\\ProcessManagement\\bin\\Debug\\jsonFile.json";
+                //try
+                //{
+                    ImportJSON(path);
+                //}
+                //catch (Exception)
+                //{
+                //    Console.ForegroundColor = ConsoleColor.Red;
+                //    Console.WriteLine("No file founds!");
+                //    Console.ResetColor();
+                //    Console.WriteLine("press any key to go to the main menu...");
+                //    Console.ReadLine();
+                //    goto line1;
+                //}
                 break;
+
             default:
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Incorrect number entered!\n");
@@ -70,10 +92,48 @@ class Program
             person.lastName = lname;
 
             people.Add(person);
+
+            if (i == personsCount - 1)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"All people added successfully!");
+                Console.ResetColor();
+                Console.WriteLine("press any key to continue...");
+                Console.ReadLine();
+            }
         }
         Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine($"All people added successfully!");
-        Console.ResetColor();
+        string json = System.Text.Json.JsonSerializer.Serialize(people);
+        string path = "jsonFile.json";
+        if (File.Exists(path) == false)
+        {
+            var file = File.Create(path);
+            file.Close();
+            File.WriteAllText(path, json);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("JSON File Created Successfully!");
+            Console.ResetColor();
+        }
+        else
+        {
+            File.WriteAllText(path, json);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("JSON File Updated Successfully!");
+            Console.ResetColor();
+        }
+    }
+    public static void ImportJSON(string path)
+    {
+        string json = File.ReadAllText(path);
+        List<People> people = JsonConvert.DeserializeObject<List<People>>(path);
+
+        foreach (var person in people)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Person 1: \n");
+            Console.ResetColor();
+            Console.WriteLine($"Id: {person.Id}\nfirstname: {person.firstName}\nlastname: {person.lastName}\n\n");
+        }
     }
 }
