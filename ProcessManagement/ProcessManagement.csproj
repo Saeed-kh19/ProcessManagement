@@ -60,14 +60,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autorun\Autorun.cs" />
+    <Compile Include="JSON\JSON.cs" />
+    <Compile Include="JSON\People.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JSON\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
