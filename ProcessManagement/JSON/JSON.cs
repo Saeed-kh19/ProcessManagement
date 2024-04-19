@@ -12,7 +12,9 @@ class Program
 {
     static void Main(string[] args)
     {
-    line1: Console.Clear();
+        //Clear Screen
+    line0: Console.Clear();
+        //Welcomizations
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Welcome to JSON management system!\n");
         Console.ResetColor();
@@ -20,8 +22,9 @@ class Program
         Console.WriteLine("What would you like to do?\n" +
             "1.Create a JSON file\n" +
             "2.Import a JSON file\n");
-    line0: int choice = int.Parse(Console.ReadLine());
+    line1: int choice = int.Parse(Console.ReadLine());
 
+        //Choices
         switch (choice)
         {
             case 1:
@@ -34,7 +37,7 @@ class Program
 
                 if (value == 0)
                 {
-                    goto line1;
+                    goto line0;
                 }
 
                 break;
@@ -57,7 +60,7 @@ class Program
                     Console.ResetColor();
                     Console.WriteLine("press any key to go to the main menu...");
                     Console.ReadLine();
-                    goto line1;
+                    goto line0;
                 }
                 break;
 
@@ -65,16 +68,20 @@ class Program
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Incorrect number entered!\n");
                 Console.ResetColor();
-                goto line0;
+                goto line1;
         }
         Console.ReadKey();
     }
+
+    //CreateJSON Functions for creating JSON files!
     public static int CreateJSON()
     {
+        //Getting the number of person members
         Console.WriteLine("How many Persons do you want to add?");
         int personsCount = int.Parse(Console.ReadLine());
         List<People> people = new List<People>();
-
+        
+        //Getting person details
         for (int i = 0; i < personsCount; i++)
         {
             Console.Clear();
@@ -108,9 +115,13 @@ class Program
                 Console.ReadLine();
             }
         }
+
+        //Saving datas to a JSON file
         Console.Clear();
         string json = System.Text.Json.JsonSerializer.Serialize(people);
         string path = "jsonFile.json";
+
+        //Checking if a JSON file existed before!
         if (File.Exists(path) == false)
         {
             var file = File.Create(path);
@@ -120,6 +131,7 @@ class Program
             Console.WriteLine("JSON File Created Successfully!");
             Console.ResetColor();
         }
+        //Updating JSON files if they created before!
         else
         {
             File.WriteAllText(path, json);
@@ -132,11 +144,15 @@ class Program
         }
         return 1;
     }
+
+    //ImportJSON Functions for importing a JSON file!
     public static void ImportJSON(string path)
     {
         string json = File.ReadAllText(path, Encoding.UTF8);
         List<People> people = JsonConvert.DeserializeObject<List<People>>(json);
         int foreachCounter = 1;
+
+        //Listing and displaying persons we added before , from a JSON file
         foreach (var person in people)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
