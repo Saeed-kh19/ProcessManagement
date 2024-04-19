@@ -24,7 +24,7 @@ class Program
             "2.Import a JSON file\n");
     line1: int choice = int.Parse(Console.ReadLine());
 
-        //Choices
+        //Choices Selection
         switch (choice)
         {
             case 1:
