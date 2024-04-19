@@ -30,7 +30,12 @@ class Program
                 Console.WriteLine("Create JSON file\n");
                 Console.ResetColor();
 
-                CreateJSON();
+                int value = CreateJSON();
+
+                if (value == 0)
+                {
+                    goto line1;
+                }
 
                 break;
 
@@ -41,19 +46,19 @@ class Program
                 Console.ResetColor();
 
                 string path = "C:\\Users\\Saeed.kh\\source\\repos\\ProcessManagement\\ProcessManagement\\bin\\Debug\\jsonFile.json";
-                //try
-                //{
+                try
+                {
                     ImportJSON(path);
-                //}
-                //catch (Exception)
-                //{
-                //    Console.ForegroundColor = ConsoleColor.Red;
-                //    Console.WriteLine("No file founds!");
-                //    Console.ResetColor();
-                //    Console.WriteLine("press any key to go to the main menu...");
-                //    Console.ReadLine();
-                //    goto line1;
-                //}
+                }
+                catch (Exception e)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("No such file founds!");
+                    Console.ResetColor();
+                    Console.WriteLine("press any key to go to the main menu...");
+                    Console.ReadLine();
+                    goto line1;
+                }
                 break;
 
             default:
@@ -64,7 +69,7 @@ class Program
         }
         Console.ReadKey();
     }
-    public static void CreateJSON()
+    public static int CreateJSON()
     {
         Console.WriteLine("How many Persons do you want to add?");
         int personsCount = int.Parse(Console.ReadLine());
@@ -121,19 +126,24 @@ class Program
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("JSON File Updated Successfully!");
             Console.ResetColor();
+            Console.WriteLine("press any key to go to the main menu...");
+            Console.ReadLine();
+            return 0;
         }
+        return 1;
     }
     public static void ImportJSON(string path)
     {
-        string json = File.ReadAllText(path);
-        List<People> people = JsonConvert.DeserializeObject<List<People>>(path);
-
+        string json = File.ReadAllText(path, Encoding.UTF8);
+        List<People> people = JsonConvert.DeserializeObject<List<People>>(json);
+        int foreachCounter = 1;
         foreach (var person in people)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Person 1: \n");
+            Console.WriteLine($"Person {foreachCounter}: \n");
             Console.ResetColor();
             Console.WriteLine($"Id: {person.Id}\nfirstname: {person.firstName}\nlastname: {person.lastName}\n\n");
+            foreachCounter++;
         }
     }
 }
