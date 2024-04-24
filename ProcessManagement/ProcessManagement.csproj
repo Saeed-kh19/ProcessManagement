@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autorun\Autorun.cs" />
+    <Compile Include="Download_Manager\IDM.cs" />
     <Compile Include="JSON\JSON.cs" />
     <Compile Include="JSON\People.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
