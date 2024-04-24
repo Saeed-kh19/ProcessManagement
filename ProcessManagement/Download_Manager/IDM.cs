@@ -1,6 +1,8 @@
-﻿using System;
+﻿using NuGet.Protocol.Plugins;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,21 +19,31 @@ namespace ProcessManagement.Download_Manager
 
             Console.ReadKey();
         }
+
+        public static void File()
+        {
+
+        }
+
         public static void Download(string url,string directory)
         {
             try
             {
-                Console.WriteLine($"File '{url}' is downloading...");
-                for (int i = 0; i < 10; i++)
+                using (var client = new WebClient())
                 {
-                    Console.Write(".");
+                    client.DownloadProgressChanged += ((sender, e) =>
+                    {
+                        Console.WriteLine($"Downloaded {e.BytesReceived} bytes out of {e.TotalBytesToReceive} bytes ({e.ProgressPercentage}%)");
+                    });
 
+                    client.DownloadFile(new Uri(url), directory);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"an Error occured!");
+                Console.ResetColor();
             }
         }
     }
