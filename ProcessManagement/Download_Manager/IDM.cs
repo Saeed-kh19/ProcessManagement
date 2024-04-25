@@ -77,31 +77,11 @@ namespace ProcessManagement.Download_Manager
 
         public class Download
         {
-
             public void DownloadFile(string url, string directory, int downloadCounter)
             {
-                //Thread[] threads = new Thread[downloadCounter];
-
-                //try
-                //{
                 Console.WriteLine($"Downloading {directory}...");
-                //for (int i = 0; i < downloadCounter; i++)
-                //{
-                //    threads[i] = new Thread(() => DownloadProcess(url, directory));
                 Thread thread = new Thread(() => DownloadProcess(url, directory));
-                //}
-                //for (int i = 0; i < downloadCounter; i++)
-                //{
-                //    threads[i].Start();
                 thread.Start();
-                //}
-
-                //}
-                //catch (Exception)
-                //{
-
-                //    throw;
-                //}
             }
 
             public void DownloadProcess(string url, string directory)
