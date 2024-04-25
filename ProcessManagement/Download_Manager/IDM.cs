@@ -13,7 +13,7 @@ namespace ProcessManagement.Download_Manager
     {
         public static void Main(string[] args)
         {
-
+            //Welcomizations!
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Welcome to Internet Download Manager (IDM)!\n");
             Console.ResetColor();
@@ -24,12 +24,13 @@ namespace ProcessManagement.Download_Manager
             {
                 int downloadCounter = int.Parse(Console.ReadLine());
 
+                //Creating arrays for urls and directories!
                 string[] urls = new string[downloadCounter];
                 string[] directories = new string[downloadCounter];
 
-
                 Console.Clear();
 
+                //Getting urls and directories (file names) of the links!
                 for (int i = 0; i < downloadCounter; i++)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -62,6 +63,8 @@ namespace ProcessManagement.Download_Manager
                     download.DownloadFile(urls[i], directories[i], downloadCounter);
                 }
             }
+
+            //Catching Errors!
             catch (Exception e)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -70,20 +73,22 @@ namespace ProcessManagement.Download_Manager
                 goto line0;
             }
 
-
+            //For keeping the screen on!!
             Console.ReadKey();
         }
 
 
         public class Download
         {
+            //A functions for creating a thread for download!
             public void DownloadFile(string url, string directory, int downloadCounter)
             {
-                Console.WriteLine($"Downloading {directory}...");
+                Console.WriteLine($"Downloading '{directory}'...");
                 Thread thread = new Thread(() => DownloadProcess(url, directory));
                 thread.Start();
             }
 
+            //Function for creating a web client for downloading the link!
             public void DownloadProcess(string url, string directory)
             {
                 try
@@ -97,10 +102,13 @@ namespace ProcessManagement.Download_Manager
                         };
                     }
                     
+                    //Prompt for when a download completes!
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"Downloads of '{directory}' Completed!");
                     Console.ResetColor();
                 }
+
+                //Catching Errors!
                 catch (Exception e)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
