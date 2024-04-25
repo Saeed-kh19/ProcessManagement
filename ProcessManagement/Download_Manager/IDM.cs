@@ -12,13 +12,53 @@ namespace ProcessManagement.Download_Manager
     internal class IDM
     {
         public static void Main(string[] args)
-        {   
+        {
+
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Welcome to Internet Download Manager (IDM)!");
+            Console.WriteLine("Welcome to Internet Download Manager (IDM)!\n");
             Console.ResetColor();
 
-            Download download = new Download();
-            download.DownloadFile("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Wz_QKY_UtRFVAHxm44oFJSh_GVFVKAARNaELlKERUQ&s","./");
+            Console.WriteLine("How many links do you want to download?");
+            int downloadCounter = int.Parse(Console.ReadLine());
+
+
+            string[] urls = new string[downloadCounter];
+            string[] directories = new string[downloadCounter];
+
+
+            Console.Clear();
+
+            for (int i = 0; i < downloadCounter; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine($"File {i + 1}\n");
+                Console.ResetColor();
+
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Enter your url: ");
+                Console.ResetColor();
+
+                urls[i] = Console.ReadLine();
+
+
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Enter your directory and file name: ");
+                Console.ResetColor();
+
+                directories[i] = Console.ReadLine();
+
+                Console.ResetColor();
+
+                Console.Clear();
+            }
+
+            Console.Clear();
+
+            for (int i = 0; i < downloadCounter; i++)
+            {
+                Download download = new Download();
+                download.DownloadFile(urls[i], directories[i], downloadCounter);
+            }
 
             Console.ReadKey();
         }
@@ -27,20 +67,21 @@ namespace ProcessManagement.Download_Manager
         public class Download
         {
 
-            public void DownloadFile(string url, string directory)
+            public void DownloadFile(string url, string directory, int downloadCounter)
             {
+                Thread[] threads = new Thread[downloadCounter];
+
                 try
                 {
                     Console.WriteLine($"Downloading {url}...");
-
-                    Thread downloadThread = new Thread( ()=> DownloadProcess("param1","param2") );
-                    downloadThread.Start();
-
-                    downloadThread.Join();
-
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"Download Completed!");
-                    Console.ResetColor();
+                    for (int i = 0; i < downloadCounter; i++)
+                    {
+                        threads[i] = new Thread(() => DownloadProcess(url, directory));
+                    }
+                    for (int i = 0; i < downloadCounter; i++)
+                    {
+                        threads[i].Start();
+                    }
 
                 }
                 catch (Exception)
@@ -50,24 +91,29 @@ namespace ProcessManagement.Download_Manager
                 }
             }
 
-            public void DownloadProcess(string url,string directory)
+            public void DownloadProcess(string url, string directory)
             {
                 try
                 {
                     using (var client = new WebClient())
                     {
-                        client.DownloadProgressChanged += (sender, e) =>
-                        {
-                            Console.WriteLine($"Downloaded {e.BytesReceived} bytes out of {e.TotalBytesToReceive} bytes ({e.ProgressPercentage}%)");
-                        };
-
                         client.DownloadFile(new Uri(url), directory);
+                        client.DownloadProgressChanged += ((sender, e) =>
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                            Console.WriteLine($"Downloaded {e.BytesReceived} bytes out of {e.TotalBytesToReceive} bytes ({e.ProgressPercentage}%)");
+                            Console.ResetColor();
+                        });
                     }
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"Downloads of '{url}' Completed!");
+                    Console.ResetColor();
                 }
                 catch (Exception e)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"an Error occured!");
+                    Console.WriteLine($"an Error occured for '{url}'!");
                     Console.ResetColor();
                 }
             }
