@@ -115,6 +115,8 @@
   <ItemGroup>
     <Compile Include="Autorun\Autorun.cs" />
     <Compile Include="Chatroom\Chatroom.cs" />
+    <Compile Include="Chatroom\ClientChat.cs" />
+    <Compile Include="Chatroom\ServerChat.cs" />
     <Compile Include="Download_Manager\IDM.cs" />
     <Compile Include="JSON\JSON.cs" />
     <Compile Include="JSON\People.cs" />
