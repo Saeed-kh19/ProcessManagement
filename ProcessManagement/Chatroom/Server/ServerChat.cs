@@ -9,11 +9,13 @@ class Program
 {
     static void Main()
     {
+        //Getting tcp server and port number
         TcpListener tcpServer = null;
         int port = 5000;
 
         try
         {
+            //Starting Servers!
             IPAddress ip = IPAddress.Parse("127.0.0.1");
             tcpServer = new TcpListener(ip, port);
             tcpServer.Start();
@@ -50,6 +52,7 @@ class Program
         }
         catch (Exception ex)
         {
+            //Error Handeling
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"An error occurred: {ex.Message}");
             Console.ResetColor();
@@ -62,6 +65,7 @@ class Program
 
     static string GenerateFileName(string baseName, byte[] fileData)
     {
+        //Generagting File names!
         string extension = GetFileExtension(fileData);
         return $"{baseName}{extension}";
     }
@@ -79,7 +83,9 @@ class Program
         };
 
         byte[] signatureBytes = new byte[4];
-        Array.Copy(fileData, signatureBytes, 4); // Extract first 4 bytes of the file
+
+        // Extract first 4 bytes of the file
+        Array.Copy(fileData, signatureBytes, 4);
 
         string signature = BitConverter.ToString(signatureBytes).Replace("-", "");
 
