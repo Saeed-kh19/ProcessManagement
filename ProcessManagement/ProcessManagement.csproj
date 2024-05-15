@@ -123,6 +123,7 @@
     <Compile Include="Semaphors &amp; more\AutoReset.cs" />
     <Compile Include="Semaphors &amp; more\LOCK.cs" />
     <Compile Include="Semaphors &amp; more\MUTEX.cs" />
+    <Compile Include="Semaphors &amp; more\Semaphores.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
