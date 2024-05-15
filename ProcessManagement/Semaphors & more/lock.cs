@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Threading;
+
+
 public class LOCK
 {
     public static void Main(string[] args)
     {
-        Account account = new Account(1000);
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("<Lock Exercise>\n\n");
+        Console.ResetColor();
+
+        Account account = new Account(3750);
 
         //Creating 10 Threads!
         Thread[] threads = new Thread[10];
@@ -15,7 +21,7 @@ public class LOCK
             {
                 for (int j = 0; j < 5; j++)
                 {
-                    account.Withdraw(200);
+                    account.Withdraw(250);
                 }
             });
 
@@ -43,7 +49,7 @@ public class LOCK
         {
             if (Balance < amount)
             {
-                Console.WriteLine("Insufficient balance!");
+                Console.WriteLine("Insufficient Balance!\n");
                 return;
             }
 
@@ -54,13 +60,19 @@ public class LOCK
                 {
                     if (Balance >= amount)
                     {
-                        Console.WriteLine("Thread {0} is withdrawing", Thread.CurrentThread.Name);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("{0} is Withdrawing\n", Thread.CurrentThread.Name);
+                        Console.ResetColor();
+
                         Balance = Balance - amount;
-                        Console.WriteLine("Thread {0} completes withdrawal. The balance now is {1}", Thread.CurrentThread.Name, Balance);
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("{0} Completes Witdrawal. The balance now is: {1}\n", Thread.CurrentThread.Name, Balance);
+                        Console.ResetColor();
                     }
                     else
                     {
-                        Console.WriteLine("Thread {0} failed to withdraw due to insufficient balance. The balance now is {1}", Thread.CurrentThread.Name, Balance);
+                        Console.WriteLine("{0} Failed to withdraw due to insufficient balance. The balance now is {1}\n", Thread.CurrentThread.Name, Balance);
                     }
                 }
             }
