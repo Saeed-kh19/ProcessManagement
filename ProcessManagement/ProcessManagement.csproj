@@ -120,6 +120,7 @@
     <Compile Include="JSON\JSON.cs" />
     <Compile Include="JSON\People.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Semaphors &amp; more\AutoReset.cs" />
     <Compile Include="Semaphors &amp; more\LOCK.cs" />
     <Compile Include="Semaphors &amp; more\MUTEX.cs" />
   </ItemGroup>
