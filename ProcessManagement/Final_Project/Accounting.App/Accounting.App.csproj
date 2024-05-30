@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12CDCEA3-A957-4CB4-8E56-909B954661C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Accounting.App</RootNamespace>
+    <AssemblyName>Accounting.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MyAccounting\Accounting.DataLayer\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\MyAccounting\Accounting.DataLayer\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs\frmAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUs\frmAboutUs.Designer.cs">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswords\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswords\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmAccessDenied.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmAccessDenied.Designer.cs">
+      <DependentUpon>frmAccessDenied.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions&amp;Accountings\frmAccountSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions&amp;Accountings\frmAccountSide.Designer.cs">
+      <DependentUpon>frmAccountSide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions&amp;Accountings\frmAddOrEditPersons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions&amp;Accountings\frmAddOrEditPersons.Designer.cs">
+      <DependentUpon>frmAddOrEditPersons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationUsers\frmApplicationUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationUsers\frmApplicationUsers.Designer.cs">
+      <DependentUpon>frmApplicationUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmCreateNewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmCreateNewAccount.Designer.cs">
+      <DependentUpon>frmCreateNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmForgotPasswords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmForgotPasswords.Designer.cs">
+      <DependentUpon>frmForgotPasswords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions&amp;Accountings\frmTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions&amp;Accountings\frmTransaction.Designer.cs">
+      <DependentUpon>frmTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationUsers\frmUserPrivacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationUsers\frmUserPrivacy.Designer.cs">
+      <DependentUpon>frmUserPrivacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutUs\frmAboutUs.resx">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswords\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmAccessDenied.resx">
+      <DependentUpon>frmAccessDenied.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions&amp;Accountings\frmAccountSide.resx">
+      <DependentUpon>frmAccountSide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions&amp;Accountings\frmAddOrEditPersons.resx">
+      <DependentUpon>frmAddOrEditPersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationUsers\frmApplicationUsers.resx">
+      <DependentUpon>frmApplicationUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmCreateNewAccount.resx">
+      <DependentUpon>frmCreateNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmForgotPasswords.resx">
+      <DependentUpon>frmForgotPasswords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions&amp;Accountings\frmTransaction.resx">
+      <DependentUpon>frmTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationUsers\frmUserPrivacy.resx">
+      <DependentUpon>frmUserPrivacy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\accounting-financial-audit-flowchart_1284-69925.webp" />
+    <None Include="Resources\analysis-planning-data-report-table-top-view-financial-research-audit-evaluation-process-vector-flat-cartoon-style_101884-180.webp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-user-male-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-registration-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-menu-male-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-menu-male-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Night_Mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnknownPerson.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-accountant-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-login-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-icon-png.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-user-male-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-transaction-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-test-account-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-analytics-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-people-skin-type-7-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-shield-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-import-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-log-out-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-passwords-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-about-us-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1676963110858.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1676963110858.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Accounting_Picture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\33328.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gmail-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-telegram-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vivid-blurred-colorful-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eye-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounting.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-update-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-remove-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Accounting.Business\Accounting.Business.csproj">
+      <Project>{24326f1d-455a-4a21-8430-9c4fc9c39cf2}</Project>
+      <Name>Accounting.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.DataLayer\Accounting.DataLayer.csproj">
+      <Project>{245876a2-a5ca-498b-b9bd-cc4e1d0e38c4}</Project>
+      <Name>Accounting.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Accounting.ViewModels\Accounting.ViewModels.csproj">
+      <Project>{6204a26f-8594-4a3a-9d4c-1cb4afdf1489}</Project>
+      <Name>Accounting.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-picture-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-picture-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrowOut-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-arrowIn-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-coin-in-hand-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ledger-48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
