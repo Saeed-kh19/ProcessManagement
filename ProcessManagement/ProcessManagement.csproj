@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -119,6 +119,133 @@
     <Compile Include="Download_Manager\IDM.cs" />
     <Compile Include="JSON\JSON.cs" />
     <Compile Include="JSON\People.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\AboutUs\frmAboutUs.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\AboutUs\frmAboutUs.Designer.cs">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Accounting_DBDataSet.Designer.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Accounting_DBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Accounting_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\ApplicationUsers\frmApplicationUsers.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\ApplicationUsers\frmApplicationUsers.Designer.cs">
+      <DependentUpon>frmApplicationUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\ApplicationUsers\frmUserPrivacy.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\ApplicationUsers\frmUserPrivacy.Designer.cs">
+      <DependentUpon>frmUserPrivacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\ChangePasswords\frmChangePassword.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\ChangePasswords\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Form1.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Login\frmCreateNewAccount.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Login\frmCreateNewAccount.Designer.cs">
+      <DependentUpon>frmCreateNewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Login\frmForgotPasswords.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Login\frmForgotPasswords.Designer.cs">
+      <DependentUpon>frmForgotPasswords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Login\frmLogin.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Program.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Properties\AssemblyInfo.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Properties\Resources.Designer.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Properties\Settings.Designer.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Reports\frmReports.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Reports\frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Settings\frmAccessDenied.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Settings\frmAccessDenied.Designer.cs">
+      <DependentUpon>frmAccessDenied.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Settings\frmSettings.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Settings\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmAccountSide.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmAccountSide.Designer.cs">
+      <DependentUpon>frmAccountSide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmAddOrEditPersons.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmAddOrEditPersons.Designer.cs">
+      <DependentUpon>frmAddOrEditPersons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmTransaction.cs" />
+    <Compile Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmTransaction.Designer.cs">
+      <DependentUpon>frmTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.Business\Analyze\TransactionAnalysis.cs" />
+    <Compile Include="Project_Accounting\Accounting.Business\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\Accounting.Business\Properties\AssemblyInfo.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountingModel.Context.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountingModel.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountingModel.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountingModel.Designer.cs">
+      <DependentUpon>AccountingModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountingModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountingModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\AccountPersons.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Context\UnitOfWork.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Properties\AssemblyInfo.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Repository\IAccountingRepository.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Services\AccountingRepository.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Services\GenericRepository.cs" />
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Transactions.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\TransactionTypes.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.DataLayer\Users.cs">
+      <DependentUpon>AccountingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting.Utilities\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\Accounting.Utilities\Properties\AssemblyInfo.cs" />
+    <Compile Include="Project_Accounting\Accounting.ViewModels\Analyze\AnalyzeViewModel.cs" />
+    <Compile Include="Project_Accounting\Accounting.ViewModels\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\Accounting.ViewModels\Persons\ListPersonsViewModel.cs" />
+    <Compile Include="Project_Accounting\Accounting.ViewModels\Properties\AssemblyInfo.cs" />
+    <Compile Include="Project_Accounting\Accounting.ViewModels\Settings\SettingsViewModel.cs" />
+    <Compile Include="Project_Accounting\Accounting\Form1.cs" />
+    <Compile Include="Project_Accounting\Accounting\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project_Accounting\Accounting\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\Accounting\Program.cs" />
+    <Compile Include="Project_Accounting\Accounting\Properties\AssemblyInfo.cs" />
+    <Compile Include="Project_Accounting\Accounting\Properties\Resources.Designer.cs" />
+    <Compile Include="Project_Accounting\Accounting\Properties\Settings.Designer.cs" />
+    <Compile Include="Project_Accounting\a\Class1.cs" />
+    <Compile Include="Project_Accounting\a\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Project_Accounting\a\Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Semaphors &amp; more\AutoReset.cs" />
     <Compile Include="Semaphors &amp; more\LOCK.cs" />
@@ -129,8 +256,155 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Project_Accounting\Accounting.App\Accounting.App.csproj" />
+    <None Include="Project_Accounting\Accounting.App\Accounting_DBDataSet.xsc">
+      <DependentUpon>Accounting_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Project_Accounting\Accounting.App\Accounting_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Accounting_DBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Project_Accounting\Accounting.App\Accounting_DBDataSet.xss">
+      <DependentUpon>Accounting_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Project_Accounting\Accounting.App\App.config" />
+    <None Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.App.exe.config" />
+    <None Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.DataLayer.dll.config" />
+    <None Include="Project_Accounting\Accounting.App\bin\Debug\Images\0a4efc20-c43d-44a2-a76a-a81786b00888" />
+    <None Include="Project_Accounting\Accounting.App\bin\Debug\Images\6ac90a72-a00e-415d-8ed6-3cc9a4506050" />
+    <None Include="Project_Accounting\Accounting.App\bin\Debug\Images\6d2cba05-4292-4642-a9b3-85837c800b6a" />
+    <None Include="Project_Accounting\Accounting.App\bin\Debug\Images\8afce4be-3ce2-4ceb-8a27-d38692857c77" />
+    <None Include="Project_Accounting\Accounting.App\obj\Debug\Accounti.AC66B4A9.Up2Date" />
+    <None Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.csproj.CoreCompileInputs.cache" />
+    <None Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.csproj.GenerateResource.cache" />
+    <None Include="Project_Accounting\Accounting.App\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Project_Accounting\Accounting.App\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\Accounting.App\Properties\Settings.settings" />
+    <None Include="Project_Accounting\Accounting.App\Resources\accounting-financial-audit-flowchart_1284-69925.webp" />
+    <None Include="Project_Accounting\Accounting.App\Resources\analysis-planning-data-report-table-top-view-financial-research-audit-evaluation-process-vector-flat-cartoon-style_101884-180.webp" />
+    <None Include="Project_Accounting\Accounting.Business\Accounting.Business.csproj" />
+    <None Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.DataLayer.dll.config" />
+    <None Include="Project_Accounting\Accounting.Business\obj\Debug\Accounti.8B973F94.Up2Date" />
+    <None Include="Project_Accounting\Accounting.Business\obj\Debug\Accounting.Business.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\Accounting.Business\obj\Debug\Accounting.Business.csproj.CoreCompileInputs.cache" />
+    <None Include="Project_Accounting\Accounting.Business\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Project_Accounting\Accounting.Business\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\Accounting.DataLayer\Accounting.DataLayer.csproj" />
+    <EntityDeploy Include="Project_Accounting\Accounting.DataLayer\AccountingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AccountingModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Project_Accounting\Accounting.DataLayer\AccountingModel.edmx.diagram">
+      <DependentUpon>AccountingModel.edmx</DependentUpon>
+    </None>
+    <None Include="Project_Accounting\Accounting.DataLayer\App.Config" />
+    <None Include="Project_Accounting\Accounting.DataLayer\bin\Debug\Accounting.DataLayer.dll.config" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\Accounti.8EA99DEA.Up2Date" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.CoreCompileInputs.cache" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\edmxResourcesToEmbed\AccountingModel.csdl" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\edmxResourcesToEmbed\AccountingModel.msl" />
+    <None Include="Project_Accounting\Accounting.DataLayer\obj\Debug\edmxResourcesToEmbed\AccountingModel.ssdl" />
+    <None Include="Project_Accounting\Accounting.DataLayer\packages.config" />
+    <None Include="Project_Accounting\Accounting.Utilities\Accounting.Utilities.csproj" />
+    <None Include="Project_Accounting\Accounting.Utilities\obj\Debug\Accounting.Utilities.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\Accounting.Utilities\obj\Debug\Accounting.Utilities.csproj.CoreCompileInputs.cache" />
+    <None Include="Project_Accounting\Accounting.Utilities\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\Accounting.ViewModels\Accounting.ViewModels.csproj" />
+    <None Include="Project_Accounting\Accounting.ViewModels\obj\Debug\Accounting.ViewModels.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\Accounting.ViewModels\obj\Debug\Accounting.ViewModels.csproj.CoreCompileInputs.cache" />
+    <None Include="Project_Accounting\Accounting.ViewModels\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\Accounting\Accounting.csproj" />
+    <None Include="Project_Accounting\Accounting\App.config" />
+    <None Include="Project_Accounting\Accounting\bin\Debug\Accounting.exe.config" />
+    <None Include="Project_Accounting\Accounting\obj\Debug\Accounting.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\Accounting\obj\Debug\Accounting.csproj.CoreCompileInputs.cache" />
+    <None Include="Project_Accounting\Accounting\obj\Debug\Accounting.csproj.GenerateResource.cache" />
+    <None Include="Project_Accounting\Accounting\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Project_Accounting\Accounting\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\Accounting\Properties\Settings.settings" />
+    <None Include="Project_Accounting\Accounting_DB.bacpac" />
+    <None Include="Project_Accounting\a\a.csproj" />
+    <None Include="Project_Accounting\a\obj\Debug\a.csproj.AssemblyReference.cache" />
+    <None Include="Project_Accounting\a\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\Content\net40\App.config.transform" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\Content\net40\Web.config.transform" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\EntityFramework.6.2.0.nupkg" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\EntityFramework.psd1" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\EntityFramework.psm1" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\init.ps1" />
+    <None Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\install.ps1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\AboutUs\frmAboutUs.resx">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\ApplicationUsers\frmApplicationUsers.resx">
+      <DependentUpon>frmApplicationUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\ApplicationUsers\frmUserPrivacy.resx">
+      <DependentUpon>frmUserPrivacy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\ChangePasswords\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Login\frmCreateNewAccount.resx">
+      <DependentUpon>frmCreateNewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Login\frmForgotPasswords.resx">
+      <DependentUpon>frmForgotPasswords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.AboutUs.frmAboutUs.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.Form1.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmAccessDenied.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmAccountSide.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmAddOrEditPersons.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmApplicationUsers.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmChangePassword.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmCreateNewAccount.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmForgotPasswords.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmLogin.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmReports.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmSettings.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmTransaction.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.frmUserPrivacy.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.Properties.Resources.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Properties\Resources.resx" />
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Reports\frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Settings\frmAccessDenied.resx">
+      <DependentUpon>frmAccessDenied.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Settings\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmAccountSide.resx">
+      <DependentUpon>frmAccountSide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmAddOrEditPersons.resx">
+      <DependentUpon>frmAddOrEditPersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting.App\Transactions&amp;Accountings\frmTransaction.resx">
+      <DependentUpon>frmTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project_Accounting\Accounting\obj\Debug\Accounting.Form1.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting\obj\Debug\Accounting.Properties.Resources.resources" />
+    <EmbeddedResource Include="Project_Accounting\Accounting\Properties\Resources.resx" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
@@ -142,6 +416,177 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Project_Accounting\.gitattributes" />
+    <Content Include="Project_Accounting\.gitignore" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.App.exe" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.App.pdb" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.Business.dll" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.Business.pdb" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.DataLayer.dll" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.DataLayer.pdb" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.ViewModels.dll" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting.ViewModels.pdb" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting_DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Accounting_DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Accounting_DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\EntityFramework.dll" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\EntityFramework.xml" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\10d3acf2-3d35-4b3e-a055-ae0596dce379.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\1f7dff7e-21f0-44dc-a27e-9dcd75515789.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\257a6e3a-e395-4b85-ae1e-dafdc4861139.png257a6e3a-e395-4b85-ae1e-dafdc4861139.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\53b6c616-d128-412f-a638-b86921119dc7.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\76ea200c-95a5-43d5-a99b-2646bb51a212.png76ea200c-95a5-43d5-a99b-2646bb51a212.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\78de0eac-3e08-497d-b058-b2942679ae8c.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\b78056e2-07a6-445e-9b3d-e41427ff60d0.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\b7c2e719-4476-4e1e-935d-4e524e654594.pngb7c2e719-4476-4e1e-935d-4e524e654594.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\c62876fb-e3b4-4e28-9b32-d14f8ee9b129.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\db556298-0883-4488-8a3a-150b68f5dd70.pngdb556298-0883-4488-8a3a-150b68f5dd70.png" />
+    <Content Include="Project_Accounting\Accounting.App\bin\Debug\Images\ddb4e13c-77a7-460a-9a77-bb5f752176bc.png" />
+    <Content Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.csproj.FileListAbsolute.txt" />
+    <Content Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.exe" />
+    <Content Include="Project_Accounting\Accounting.App\obj\Debug\Accounting.App.pdb" />
+    <Content Include="Project_Accounting\Accounting.App\obj\Debug\TempPE\Accounting_DBDataSet.Designer.cs.dll" />
+    <Content Include="Project_Accounting\Accounting.App\obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\1676963110858.jfif" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\1676963110858.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\33328.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\accounting.ico" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\Accounting_Picture.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\add-icon-png.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-about-us-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-accountant-64.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-add-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-add-picture-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-add-picture-96.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-add-user-male-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-analytics-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-arrowIn-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-arrowOut-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-back-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-coin-in-hand-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-delete-user-male-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-edit-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-eye-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-gmail-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-import-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-ledger-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-log-out-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-login-64.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-logout-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-passwords-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-people-skin-type-7-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-refresh-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-registration-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-remove-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-settings-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-telegram-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-test-account-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-transaction-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-update-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-user-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-user-menu-male-50 %281%29.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-user-menu-male-50.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\icons8-user-shield-48.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\Night_Mode.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\Refresh.png" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\UnknownPerson.jpg" />
+    <Content Include="Project_Accounting\Accounting.App\Resources\vivid-blurred-colorful-background.jpg" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.Business.dll" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.Business.pdb" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.DataLayer.dll" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.DataLayer.pdb" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.ViewModels.dll" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\Accounting.ViewModels.pdb" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\EntityFramework.dll" />
+    <Content Include="Project_Accounting\Accounting.Business\bin\Debug\EntityFramework.xml" />
+    <Content Include="Project_Accounting\Accounting.Business\obj\Debug\Accounting.Business.csproj.FileListAbsolute.txt" />
+    <Content Include="Project_Accounting\Accounting.Business\obj\Debug\Accounting.Business.dll" />
+    <Content Include="Project_Accounting\Accounting.Business\obj\Debug\Accounting.Business.pdb" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\AccountingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AccountingModel.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Project_Accounting\Accounting.DataLayer\AccountingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AccountingModel1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\Accounting.DataLayer.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\Accounting.DataLayer.pdb" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\Accounting.ViewModels.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\Accounting.ViewModels.pdb" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\EntityFramework.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\bin\Debug\EntityFramework.xml" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.csproj.FileListAbsolute.txt" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\obj\Debug\Accounting.DataLayer.pdb" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\obj\Debug\TempPE\AccountingModel.Context.cs.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\obj\Debug\TempPE\AccountingModel.cs.dll" />
+    <Content Include="Project_Accounting\Accounting.DataLayer\obj\Debug\TempPE\AccountingModel.Designer.cs.dll" />
+    <Content Include="Project_Accounting\Accounting.sln" />
+    <Content Include="Project_Accounting\Accounting.Utilities\bin\Debug\Accounting.Utilities.dll" />
+    <Content Include="Project_Accounting\Accounting.Utilities\bin\Debug\Accounting.Utilities.pdb" />
+    <Content Include="Project_Accounting\Accounting.Utilities\obj\Debug\Accounting.Utilities.csproj.FileListAbsolute.txt" />
+    <Content Include="Project_Accounting\Accounting.Utilities\obj\Debug\Accounting.Utilities.dll" />
+    <Content Include="Project_Accounting\Accounting.Utilities\obj\Debug\Accounting.Utilities.pdb" />
+    <Content Include="Project_Accounting\Accounting.ViewModels\bin\Debug\Accounting.ViewModels.dll" />
+    <Content Include="Project_Accounting\Accounting.ViewModels\bin\Debug\Accounting.ViewModels.pdb" />
+    <Content Include="Project_Accounting\Accounting.ViewModels\obj\Debug\Accounting.ViewModels.csproj.FileListAbsolute.txt" />
+    <Content Include="Project_Accounting\Accounting.ViewModels\obj\Debug\Accounting.ViewModels.dll" />
+    <Content Include="Project_Accounting\Accounting.ViewModels\obj\Debug\Accounting.ViewModels.pdb" />
+    <Content Include="Project_Accounting\Accounting\bin\Debug\Accounting.exe" />
+    <Content Include="Project_Accounting\Accounting\bin\Debug\Accounting.pdb" />
+    <Content Include="Project_Accounting\Accounting\obj\Debug\Accounting.csproj.FileListAbsolute.txt" />
+    <Content Include="Project_Accounting\Accounting\obj\Debug\Accounting.exe" />
+    <Content Include="Project_Accounting\Accounting\obj\Debug\Accounting.pdb" />
+    <Content Include="Project_Accounting\Accounting_DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Project_Accounting\Accounting_DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Accounting_DB.mdf</DependentUpon>
+    </Content>
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.xml" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.xml" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\about_EntityFramework.help.txt" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="Project_Accounting\packages\EntityFramework.6.2.0\tools\migrate.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Project_Accounting\Accounting.App\bin\Debug\Images\257a6e3a-e395-4b85-ae1e-dafdc4861139.png\" />
+    <Folder Include="Project_Accounting\Accounting.App\bin\Debug\Images\76ea200c-95a5-43d5-a99b-2646bb51a212.png\" />
+    <Folder Include="Project_Accounting\Accounting.App\bin\Debug\Images\b7c2e719-4476-4e1e-935d-4e524e654594.png\" />
+    <Folder Include="Project_Accounting\Accounting.App\bin\Debug\Images\db556298-0883-4488-8a3a-150b68f5dd70.png\" />
+    <Folder Include="Project_Accounting\Accounting.App\bin\Release\" />
+    <Folder Include="Project_Accounting\Accounting.Business\bin\Release\" />
+    <Folder Include="Project_Accounting\Accounting.Business\obj\Debug\TempPE\" />
+    <Folder Include="Project_Accounting\Accounting.DataLayer\bin\Release\" />
+    <Folder Include="Project_Accounting\Accounting.Utilities\bin\Release\" />
+    <Folder Include="Project_Accounting\Accounting.Utilities\obj\Debug\TempPE\" />
+    <Folder Include="Project_Accounting\Accounting.ViewModels\bin\Release\" />
+    <Folder Include="Project_Accounting\Accounting.ViewModels\obj\Debug\TempPE\" />
+    <Folder Include="Project_Accounting\Accounting\obj\Debug\TempPE\" />
+    <Folder Include="Project_Accounting\a\bin\Debug\" />
+    <Folder Include="Project_Accounting\a\obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
